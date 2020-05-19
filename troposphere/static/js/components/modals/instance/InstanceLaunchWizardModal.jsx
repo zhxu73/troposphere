@@ -367,8 +367,10 @@ export default React.createClass({
 
     onCountChange: function(e) {
         let instanceCount = parseInt(e.target.value);
-        instanceCount = Number.isNaN(instanceCount) || instanceCount < 1
-            ? 1 : instanceCount;
+        instanceCount =
+            Number.isNaN(instanceCount) || instanceCount < 1
+                ? 1
+                : instanceCount;
         this.setState({
             instanceCount
         });
@@ -376,8 +378,10 @@ export default React.createClass({
 
     onCountBlur: function(e) {
         let instanceCount = parseInt(e.target.value);
-        instanceCount = Number.isNaN(instanceCount) || instanceCount < 1
-            ? 1 : instanceCount;
+        instanceCount =
+            Number.isNaN(instanceCount) || instanceCount < 1
+                ? 1
+                : instanceCount;
         e.target.value = instanceCount;
         this.setState({
             instanceCount
@@ -665,8 +669,12 @@ export default React.createClass({
             Boolean(this.state[prop])
         );
 
-        return requiredExist && !this.exceedsResources()
-            && !this.invalidName() && !this.invalidInstanceCount();
+        return (
+            requiredExist &&
+            !this.exceedsResources() &&
+            !this.invalidName() &&
+            !this.invalidInstanceCount()
+        );
     },
 
     //==================
