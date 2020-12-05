@@ -79,7 +79,8 @@ RUN npm install --unsafe-perm
 RUN useradd user
 
 # Prepare entrypoint
-RUN cp docker/entrypoint.sh /root/entrypoint.sh && \
+RUN chown -R www-data:www-data /opt/dev/troposphere && \
+    cp docker/entrypoint.sh /root/entrypoint.sh && \
     cp docker/test.sh /root/test.sh && \
     chmod +x /root/entrypoint.sh && \
     chmod +x /root/test.sh && \
