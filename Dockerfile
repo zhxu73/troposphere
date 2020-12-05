@@ -55,7 +55,7 @@ RUN pip install --upgrade pip==9.0.3 virtualenv && \
     mkdir /opt/env && \
     virtualenv /opt/env/troposphere
 
-COPY . /opt/dev/troposphere
+COPY --chown=www-data:www-data . /opt/dev/troposphere
 WORKDIR /opt/dev/troposphere
 
 # Setup uwsgi
